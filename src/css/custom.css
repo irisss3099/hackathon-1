@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #6a0dad; /* Deep Violet */
+  --ifm-color-primary-dark: #5d00a0;
+  --ifm-color-primary-darker: #4e008a;
+  --ifm-color-primary-darkest: #3f0073;
+  --ifm-color-primary-light: #833dd1;
+  --ifm-color-primary-lighter: #a06ee0;
+  --ifm-color-primary-lightest: #be9ff0;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Title Hover Animation */
+.navbar__title {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar__title:hover {
+  transform: scale(1.05);
+}
+
+/* A more aesthetic, futuristic dark mode palette */
+[data-theme='dark'] {
+  --ifm-color-primary: #b388ff; /* Lighter Violet */
+  --ifm-color-primary-dark: #9e5eff;
+  --ifm-color-primary-darker: #8a33ff;
+  --ifm-color-primary-darkest: #7300e6;
+  --ifm-color-primary-light: #ccabff;
+  --ifm-color-primary-lighter: #e6cbff;
+  --ifm-color-primary-lightest: #fff0ff;
+  --ifm-background-color: #1a1a2e; /* Dark, slightly bluish grey */
+  --ifm-font-color-base: #e0e0e0; /* Lighter font color for dark mode */
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,63 @@
+.futureFeatures {
+  background-color: var(--ifm-background-color);
+}
+
+.futureFeature {
+  background-color: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--ifm-shadow-md);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.futureFeature:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--ifm-shadow-lg);
+}
+
+.futureFeatureIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block; /* Ensures icon takes full width for text-align center */
+}
+
+.futureFeature h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  color: var(--ifm-color-primary);
+}
+
+.futureFeature p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ifm-font-color-base);
+}
+
+/* Animations (similar to HomepageFeatures) */
+@keyframes fadeInSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.futureFeatures .row > .col {
+  opacity: 0;
+  animation: fadeInSlideUp 0.8s ease-out forwards;
+}
+
+/* Staggered animation for future features */
+.futureFeatures .row > .col:nth-child(1) { animation-delay: 0.1s; }
+.futureFeatures .row > .col:nth-child(2) { animation-delay: 0.3s; }
+.futureFeatures .row > .col:nth-child(3) { animation-delay: 0.5s; }
+.futureFeatures .row > .col:nth-child(4) { animation-delay: 0.7s; }

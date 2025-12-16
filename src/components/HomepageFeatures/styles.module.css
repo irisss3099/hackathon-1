@@ -1,0 +1,106 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+/* New featureIcon styling */
+.featureIcon {
+  font-size: 4rem; /* Larger emoji icon */
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glitter effect keyframes */
+@keyframes glitter-shine {
+  0% { transform: translateX(-100%) skewX(-30deg); }
+  100% { transform: translateX(100%) skewX(-30deg); }
+}
+
+.col {
+  opacity: 0; /* Hidden by default */
+  animation: fadeIn 0.8s ease-out forwards;
+  /* Stagger animation */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+  cursor: pointer; /* Indicate interactivity */
+  transform-style: preserve-3d; /* For better 3D effects if any */
+  position: relative; /* For pseudo-element positioning */
+  overflow: hidden; /* To hide glitter outside bounds */
+}
+
+.col:hover {
+  transform: translateY(-15px); /* More pronounced lift */
+  box-shadow: var(--ifm-shadow-lg); /* Add a larger shadow */
+  /* Ensure glitter is visible above other elements */
+  z-index: 1;
+}
+
+.col:active {
+  transform: scale(0.98); /* Slightly shrink on click */
+}
+
+.col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Width of the glitter effect */
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%) skewX(-30deg); /* Initial position outside to the left */
+  transition: none; /* Reset transitions for the pseudo-element */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+.col:hover::before {
+  animation: glitter-shine 1s ease-out forwards; /* Apply glitter animation on hover */
+}
+
+
+.col:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.col:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.col:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* Typography */
+.col h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color: var(--ifm-color-primary-darkest); /* Use a darker primary color */
+}
+
+[data-theme='dark'] .col h3 {
+  color: var(--ifm-color-primary-lightest); /* Lighter color for dark mode */
+}
+
+.col p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
